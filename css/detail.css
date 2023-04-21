@@ -1,0 +1,52 @@
+.product-info {
+    margin-top: 32px;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-container h1 {
+
+}
+
+.product-container p {
+    display: block;
+    flex: 1;
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.price {
+    font-weight: 500;
+    color: #cb1c22;
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+.strike-price{
+    color: #99a2aa;
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.primary-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #cb1c22;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 15px;
+    height: 54px;
+    cursor: pointer;
+}

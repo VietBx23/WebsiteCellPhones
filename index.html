@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    
+  </head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Asm FPT shop</title>
+  </head>
+  <body ng-controller="myctrl" >
+
+    <div class="navbar-container">
+      <!-- ======= header ========= -->
+      <header id="header-bar">
+        <div class="container d-flex align-items-center header_content">
+          <div class="logo_main" id="header-logo">
+            <img class="logo" width="100%" src="./img/FPT_Shop.webp" alt="" />
+          </div>
+          <!-- search -->
+          <div class="form_search-box col d-flex align-items-center">
+            <input ng-model="timKiem" type="text" class="form-control col-12" placeholder="Nhập tên điện thoại, máy tính, phụ kiện,.. cần tìm "/>
+            <button ng-click="handleSearch()" class="btn btn-dark"><i class="bi bi-search"></i></button>
+          </div>
+          <!-- ================//////// -->
+        <div class="nav nav-item" id="header-items">
+          <ul class="nav nav-pills nav-justified">
+            <li class="nav-item">
+              <i class="bi bi-file-earmark-bar-graph-fill"></i>
+              <a class="nav-link" href="#"><small> Thông tin hay</small> </a>
+            </li>
+            <li class="nav-item">
+              <i class="bi bi-credit-card-2-front-fill"></i>
+              <a class="nav-link" style="width: 150px" href="#"><small>Thanh toán & tiện ích</small></a>
+            </li>
+            <li class="nav-item">
+              <i class="bi bi-person-circle"></i>
+              <a class="nav-link" href="#"
+                ><small> Tài khoản của tôi</small>
+              </a>
+            </li>
+            <li class="nav-item">
+              <i class="bi bi-cart-fill"></i>
+              <a class="nav-link" href="./GH.html"><small> Giỏ hàng</small> </a>
+            </li>
+          </ul>
+        </div>
+      
+      </header>
+
+      <!-- ------ NAV ==== -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="navbar-lead">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="logo_main">
+            <img class="logo" src="./img/FPT_Shop.webp" alt="" />
+          </div>
+        </div>
+        
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"><small> TRANG CHỦ</small> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dienthoai.html"><small> ĐIỆN THOẠI</small> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small> LAP TOP</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" ><small> MÁY TÍNH BẢNG</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" ><small> APPLE</small> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small> PC-LINH KIỆN</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small> PHỤ KIỆN</small> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small> MÁY CŨ GIÁ RẺ</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small>HÀNG GIA DỤNG</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small>SIM THẺ</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small>KHUYẾN MÃI</small></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="bodyimg">
+      <div class="main main-wrapper">
+        <div class="row">
+          <div class="col-12">
+            <img src="./img/KM2.jpg" alt="">
+          </div>
+        </div>
+      </div>
+   
+        
+      <div class="container mt-3">     
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+            <li data-target="#myCarousel" data-slide-to="6"></li>
+            <li data-target="#myCarousel" data-slide-to="7"></li>
+          </ul>
+          
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./img/Ip14.webp" alt="" width="1100" height="300">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/Z4.webp" alt="" width="1100" height="300">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/redmi.webp" alt="" width="1100" height="300">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/OPpo.webp" alt="" width="1100" height="300">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/noichien.webp" alt="" width="1100" height="300">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/ViVo.webp" alt="" width="1100" height="300">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/Xiaomi.webp" alt="" width="1100" height="300">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/Combo.webp" alt="" width="1100" height="300">
+            </div>
+          </div>
+          
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+
+
+        <div class="container">
+          <div class="row">
+
+            <div class="card col-md-2">
+              <div class="circle">
+              <img src="./img/icon-mobile.webp" alt="">
+            </div>
+              <div class="card-body">
+                <strong class="card-title">Điện thoại</strong>
+              </div>
+            </div>
+
+
+            <div class="card col-md-2">
+              <div class="circle">
+              <img src="./img/icon-laptop.webp" alt="">
+            </div>
+              <div class="card-body">
+                <strong class="card-title">Laptop</strong>
+              </div>
+            </div>
+
+
+            <div class="card col-md-2">
+              <div class="circle">
+              <img src="./img/icon-pc.webp" alt="">
+            </div>
+              <div class="card-body">
+                <strong class="card-title">PC - Lắp ráp</strong>
+              </div>
+            </div>
+
+            
+            <div class="card col-md-2">
+              <div class="circle">
+              <img src="./img/icon-tablet.webp" alt="">
+            </div>
+              <div class="card-body">
+                <strong class="card-title">Máy tính bảng</strong>
+              </div>
+            </div>
+
+            <div class="card col-md-2">
+              <div class="circle">
+              <img src="./img/icon-smart.webp" alt="">
+            </div>
+              <div class="card-body">
+                <strong class="card-title">Thiết bị thông minh</strong>
+              </div>
+            </div>
+
+
+            <div class="card col-md-2">
+              <div class="circle">
+              <img src="./img/icon-houseware.webp" alt="">
+            </div>
+              <div class="card-body">
+                <strong class="card-title">Gia dụng</strong>
+              </div>
+            </div>
+
+
+            <div class="card col-md-2">
+              <div class="circle">
+              <img src="./img/icon-apple.webp" alt="">
+            </div>
+              <div class="card-body">
+                <strong class="card-title">Apple</strong>
+              </div>
+            </div>
+
+            <div class="card col-md-2">
+              <div class="circle">
+              <img src="./img/icon-samsung.webp" alt="">
+            </div>
+              <div class="card-body">
+                <strong class="card-title">Samsung</strong>
+              </div>
+            </div>
+
+            <div class="card col-md-2">
+              <div class="circle">
+              <img src="./img/icon-smartwatch.webp" alt="">
+            </div>
+              <div class="card-body">
+                <strong class="card-title">Đồng hồ thông minh</strong>
+              </div>
+            </div>
+
+            <div class="card col-md-2">
+              <div class="circle">
+              <img src="./img/icon-accessories.webp" alt="">
+            </div>
+              <div class="card-body">
+                <strong class="card-title">Phụ kiện</strong>
+              </div>
+            </div>
+
+            <div class="card col-md-2">
+              <div class="circle">
+              <img src="./img/icon-screen.webp" alt="">
+            </div>
+              <div class="card-body">
+                <strong class="card-title">Màn hình</strong>
+              </div>
+            </div>
+
+            <div class="card col-md-2">
+              <div class="circle">
+              <img src="./img/icon-maycu.webp" alt="">
+            </div>
+              <div class="card-body">
+                <strong class="card-title">Máy cũ</strong>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container">
+        <div class="card">
+          <img src="./img/BaoHanh.webp" alt="" width="100%">
+        </div>
+      </div>
+
+
+      <!--=========  The slideshow ======== -->
+
+      <!-- Khuyến mãi hot -->
+      <div class="container mt-3" style="background: rgb(255, 255, 255);border-radius: 5px;">     
+        <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+          <h3 style="color:red"><i class="bi bi-fire" style='font-size:30px;color:red'></i> KHUYẾN MÃI HOT  </h3>      
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card">
+                 
+                
+                <!-- Sản phẩm  1 -->
+                <div class="row">
+                  
+                  <!-- 1 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body" >
+                        <img style="margin-left:15px ;" src="./img/iphone-14-pro-max-dd-bh.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 4.000.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Iphone 14 pro max 128GB</h5> </card-title>
+                    <div class="price-container">
+                      <span class="price-primary">29.990.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">33.999.000 đ</span>
+                        <span class="date">1 ngay 02:35:31</span>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+
+                  <!-- 2 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img  style="margin-left:15px ;" src="./img/_samsung-galaxy-s22-bora-purple-dd-docquyen-bh.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 9.500.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Samsung Galaxy S22 Bora Purple</h5> </card-title>
+                    
+                    <div class="price-container">
+                      <span class="price-primary">12.490.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">21.990.000 đ</span>
+                        
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/de-sac-khong-day-samsung-15w-trang-2.webp" alt="">
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+                  
+                  <!-- 3 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img  style="margin-left:15px " src="./img/oppo-reno8-t-dd.webp" alt="" width="80%" height="180px">
+                      </div> 
+                    </div>  
+                    <card-title><h5>OPPO Reno8 T 5G 128GB</h5> </card-title>
+                    
+                    <div class="price-container">
+                      <span class="price-primary">9.990.000 đ</span>
+                      <div class="sale-price-container">
+                        
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/Loa.webp" alt="">
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+                  
+                  <!-- 4 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img style="margin-left:15px ;" src="./img/lenovo-gaming-legion-5-15arh7-xam-dam-dd.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 5.800.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>lenovo Gaming Legion 5 <br> 15ARH7 R5 <br> 6600H/82RE002VVN</h5> </card-title>
+                    <div class="price-container">
+                      <span class="price-primary">26.190.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">31.990.000 đ</span>
+                        <span class="date">3 ngay 13:09:31</span>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/ic-tp-bank.webp" alt="Giảm ngay 600.000đ khi mở thẻ TP BANHK EVO">
+                      <img src="./img/download.webp" alt="Giảm 5% tối da 1.200.000đ khi trả góp qua Kredivo">
+                    </div>
+
+                  </div>
+        
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="card" style="height: 100%;">
+                
+                <!-- Sản phẩm  2-->
+                <div class="row">
+                  <!-- 1 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body" >
+                        <img style="margin-left:15px ;" src="./img/_iphone-14-dd-bh.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 4.500.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Iphone 14 128GB</h5> </card-title>
+                    <div class="price-container">
+                      <span class="price-primary">20.490.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">24.999.000 đ</span>
+                        <span class="date">1 ngay 10:35:31</span>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+
+                  <!-- 2 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img  style="margin-left:15px ;" src="./img/samsung-galaxy-a04s-xanh-dd-moi.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 400.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Samsung Galaxy A04s</h5> </card-title>
+                    
+                    <div class="price-container">
+                      <span class="price-primary">3.590.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">3.990.000 đ</span>
+                        
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+                  
+                  <!-- 3 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img  style="margin-left:15px ;"src="./img/lenovo-ideapad-gaming-3-15iah7-xam-dd.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 6.800.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>levono Gaming IdeaPad 3 15iAH7  <br> i5 12500H/82S900H2VN</h5> </card-title>
+                    
+                    <div class="price-container">
+                      <span class="price-primary">20.490.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">27.299.000 đ</span>
+                        <span class="date">1 ngay 02:35:31</span>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/balo (1).webp" alt="">
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+                  
+                  <!-- 4 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img style="margin-left:15px ;" src="./img/xiaomi-11t-pro-dd-bh.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 2.800.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Xiaomi 11T Pro 5G 12GB-256Gb</h5> </card-title>
+                    <div class="price-container">
+                      <span class="price-primary">12.190.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">14.999.000 đ</span>
+                        <span class="date">1 ngay 02:35:31</span>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/ic-tp-bank.webp" alt="Giảm ngay 600.000đ khi mở thẻ TP BANHK EVO">
+                      <img src="./img/download.webp" alt="Giảm 5% tối da 1.200.000đ khi trả góp qua Kredivo">
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="card" style="height: 100%;">
+                
+                <!-- Sản phẩm  3-->
+                <div class="row">
+                  <!-- 1 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body" >
+                        <img style="margin-left:15px ;" src="./img/ss-tab-a7-lite-bac-dd.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          
+                          <span class="badge-primary">Lì xì 1.000.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Samsung Galaxy Tab A7 Lite</h5> </card-title>
+                    <div class="price-container">
+                      <span class="price-primary">3.490.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">4.499.000 đ</span>
+                        <span class="date">1 ngay 10:35:31</span>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/bao da A7.webp" alt="tặng bao da chính hãng">
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+
+                  <!-- 2 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img  style="margin-left:15px ;" src="./img/tai-nghe-airpods-pro-2021-dd.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 1.100.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Tai nghe AirPods pro 2021</h5> </card-title>
+                    
+                    <div class="price-container">
+                      <span class="price-primary">4.899.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">5.999.000 đ</span>
+                        
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+                  
+                  <!-- 3 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img  style="margin-left:15px"src="./img/vivo-y35-den-dd.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 400.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Vivo Y35 8GB-128GB</h5> </card-title>
+                    
+                    <div class="price-container">
+                      <span class="price-primary">6.590.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">6.990.000 đ</span>
+                        
+                      </div>
+                    </div>
+                    <div>
+                      
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+                  
+                  <!-- 4 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img style="margin-left:15px ;" src="./img/asus-tuf-gaming-fx506lh-den-2022-dd.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 4.300.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5> Asus TUF Gaming FX506LHB- <br> HN188W i5 10300H/</h5> </card-title>
+                    <div class="price-container">
+                      <span class="price-primary">12.190.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">14.999.000 đ</span>
+                        <span class="date">1 ngay 02:35:31</span>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/balo (1).webp" alt="Tặng BaLo laptop">
+                      <img src="./img/ic-tp-bank.webp" alt="Giảm ngay 600.000đ khi mở thẻ TP BANHK EVO">
+                      <img src="./img/download.webp" alt="Giảm 5% tối da 1.200.000đ khi trả góp qua Kredivo">
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="card" style="height: 100%;">
+                
+                <!-- Sản phẩm  4-->
+                <div class="row">
+
+                  <!-- 1 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body" >
+                        <img style="margin-left:15px ;" src="./img/oppo-a95-dd.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 1.000.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Oppo A95 8GB-128GB</h5> </card-title>
+                    <div class="price-container">
+                      <span class="price-primary">5.490.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">6.499.000 đ</span>
+                        <span class="date">1 ngay 10:35:31</span>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+
+                  <!-- 2 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img  style="margin-left:15px ;" src="./img/msi-gaming-gf63-thin-11sc-1090vn-den-dd.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 2.000.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>MSI Gaming GF63 THin 11SC- <br> 109VN i5 11400H</h5> </card-title>
+                    
+                    <div class="price-container">
+                      <span class="price-primary">16.990.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">18.990.000 đ</span>
+                        
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/balo (1).webp" alt="">
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+                  
+                  <!-- 3 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img  style="margin-left:15px ;"src="./img/may-loc-khong-khi-xiaomi-mi-ap-4-lite-trang-dd.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          
+                          <span class="badge-primary">Lì xì 1.400.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Máy lọc không khí <br> Xiaomi Mi AP 4 Lite</h5> </card-title>
+                    
+                    <div class="price-container">
+                      <span class="price-primary">2.590.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">3.990.000 đ</span>
+                        
+                      </div>
+                    </div>
+                    <div>
+                      
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+                  
+                  <!-- 4 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img style="margin-left:15px ;" src="./img/Apple Watch SE GPS 40mm dai dien.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 3.000.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Apple Watch SE GPS 40mm <br> viền nhôm dây cao su</h5> </card-title>
+                    <div class="price-container">
+                      <span class="price-primary">5.999.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">8.999.000 đ</span>
+                        <span class="date">1 ngay 02:35:31</span>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/ic-tp-bank.webp" alt="Giảm ngay 600.000đ khi mở thẻ TP BANHK EVO">
+                      <img src="./img/download.webp" alt="Giảm 5% tối da 1.200.000đ khi trả góp qua Kredivo">
+                    </div>
+
+                  </div>
+                </div>
+
+                 <!-- Sản phẩm  5-->
+                 <div class="row">
+
+                  <!-- 1 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body" >
+                        <img style="margin-left:15px ;" src="./img/xiaomi-camera-mi-360-1080p-dd.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-primary">Lì xì 159.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Camera An ninh Xiaomi Mi <br> Home 360 1080P AI</h5> </card-title>
+                    <div class="price-container">
+                      <span class="price-primary">790.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">949.000 đ</span>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+
+                  <!-- 2 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img  style="margin-left:15px ;" src="./img/gigabyte-gaming-g5-dd-bh.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 500.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Gaming G5 GD i5 11400H</h5> </card-title>
+                    
+                    <div class="price-container">
+                      <span class="price-primary">19.990.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">20.990.000 đ</span>
+                        
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/balo (1).webp" alt="">
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+                  
+                  <!-- 3 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img  style="margin-left:15px ;"src="./img/xiaomi-11t-pro-dd-bh" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          
+                          <span class="badge-primary">Lì xì 1.400.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Xiaomi Redmi Note <br> 11 Pro 8GB-128GB</h5> </card-title>
+                    
+                    <div class="price-container">
+                      <span class="price-primary">6.590.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">7.490.000 đ</span>
+                        
+                      </div>
+                    </div>
+                    <div>
+                      
+                      <img src="./img/ic-tp-bank.webp" alt="">
+                      <img src="./img/download.webp" alt="">
+                    </div>
+                  </div>
+                  
+                  <!-- 4 -->
+                  <div class="card-body">
+                    <div class="crad col-md-12">
+                      <div class="card-body">
+                        <img style="margin-left:15px ;" src="./img/oppo-reno6-5g-dd.webp" alt="" width="80%" height="180px">
+                        <div class="badge-container">
+                          <span class="badge-warning">Trả góp 0%</span>
+                          <span class="badge-primary">Lì xì 4.000.000đ</span>
+                        </div>
+                      </div> 
+                    </div>  
+                    <card-title><h5>Apple Watch SE GPS 40mm <br> viền nhôm dây cao su</h5> </card-title>
+                    <div class="price-container">
+                      <span class="price-primary">8.990.000 đ</span>
+                      <div class="sale-price-container">
+                        <span class="price">12.990.000 đ</span>
+                        
+                      </div>
+                    </div>
+                    <div>
+                      <img src="./img/Op.webp" alt="">
+                      <img src="./img/ic-tp-bank.webp" alt="Giảm ngay 600.000đ khi mở thẻ TP BANHK EVO">
+                      <img src="./img/download.webp" alt="Giảm 5% tối da 1.200.000đ khi trả góp qua Kredivo">
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#myCarousel2" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel2" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+
+        </div>
+
+      <div >
+      
+    </div>
+   
+    </div>
+
+        
+      <div class="container mt-2" style="border-radius: 8px; overflow: hidden; padding: 176px 0 84px; background:url('https://images.fpt.shop/unsafe/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/20/638098558829628939_desk-html-bg.png') no-repeat center center / contain">
+        <div class="product-container row" style="padding-inline: 48px; box-sizing: border-box;">
+          <div class="col-sm">
+            <img width="100%"  src="./img/638091953833719781_desk-html-banner-ip14prmx.webp" alt="">
+          </div>
+          <div class="col-sm">
+            <img width="100%"  src="./img/desk-html-banner-ip14pro.webp" alt="">
+          </div>
+          <div class="col-sm">
+            <img width="100%"  src="./img/desk-html-banner-m1.webp" alt="">
+          </div>
+          <div class="col-sm">
+            <img width="100%"  src="./img/desk-html-banner-ipad.webp" alt="">
+          </div>
+        </div>
+
+        <a href="#" style="display: block; margin: auto; margin-top: 20px; text-align: center">
+          <img style="max-width: 512px; width: 100%;" src="https://images.fpt.shop/unsafe/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/12/638091208054929057_desk-html-sub-cate.png" alt="">
+        </a>
+      </div>
+
+      <div class="container mt-3" style="background-color: white; ; border-radius:5px">
+        <h4 style="padding: 15px;">SẮM TV CHỌN NGAY XIAOMI </h4>
+        <div class="col">
+          <img width="100%"  src="https://images.fpt.shop/unsafe/fit-in/1168x97/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/13/638092108398504351_H7- 1200x100.png" alt="">
+        </div>
+        <div class="product-container row" style="margin: 15px;">
+          <div class="col-sm">
+            <img width="100%" src="./img/Brand-banner.webp" alt="">
+          </div>
+          <div class="col-sm">
+            <img width="100%"src="https://images.fpt.shop/unsafe/fit-in/262x324/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/13/638092297810076781_Brand-banner.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img width="100%"src="https://images.fpt.shop/unsafe/fit-in/262x324/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/13/638092117838086061_Brand-banner-2.png" alt="">
+          </div>
+          <div class="col-sm">
+            <img width="100%"src="https://images.fpt.shop/unsafe/fit-in/262x324/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/13/638092117839379398_Brand-banner-3.png" alt="">
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="container">
+          <img width="100%" src="https://images.fpt.shop/unsafe/fit-in/1200x200/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/14/638066562547867015_F-H5_1200x200.png" alt="">
+      </div>
+
+
+      <!-- Dien thoai noi bat -->
+
+      <div class="container">
+        
+        <div class="card">
+          <h4 style="background-color: white; margin: 15px;">ĐIỆN THOẠI NỔI BẬT</h4>
+          <div class="row">
+            <div class="card-body">
+              <div class="crad col-md-12">
+
+                <!-- 1 -->
+                <div class="card-body" >
+                  <img style="margin-left:15px ;" src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/11/638090353746989186_iphone-13-dd-bh.jpg" alt="" width="80%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 4.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Iphone 14 pro max 128GB</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">29.990.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">33.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img style="margin-left:15px ;" src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072157041005486_xiaomi-redmi-note-11-dd-bh.jpg" alt="" width="80%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 4.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Iphone 14 pro max 128GB</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">29.990.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">33.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img style="margin-left:15px ;" src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/1/638028873543676599_samsung-galaxy-s22-ultra-dd-tragop-bh.jpg" alt="" width="80%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 4.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Iphone 14 pro max 128GB</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">29.990.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">33.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img style="margin-left:15px ;" src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/21/638072154743011638_xiaomi-redmi-10-dd-bh.jpg" alt="" width="80%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 4.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Iphone 14 pro max 128GB</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">29.990.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">33.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- 5 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img style="margin-left:15px ;" src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/23/638073848656369166_iphone-11-dd-bh.jpg" alt="" width="80%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 4.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Iphone 14 pro max 128GB</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">29.990.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">33.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+            <!-- 6 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img style="margin-left:15px ;" src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/13/638092021139867343_samsung-galaxy-z-flip4-dd-docquyen-bh.jpg" alt="" width="80%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 4.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Iphone 14 pro max 128GB</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">29.990.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">33.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img style="margin-left:15px ;" src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/20/638071499364966239_oppo-a77s-dd.jpg" alt="" width="80%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 4.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Iphone 14 pro max 128GB</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">29.990.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">33.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img style="margin-left:15px ;" src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/20/638071502453762468_oppo-a17k-dd.jpg" alt="" width="80%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 4.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Iphone 14 pro max 128GB</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">29.990.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">33.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+<!-- =========== -->
+      <div class="container">
+        <img width="100%" src="./img/H5_1200x200.webp" alt="" style="border-radius: 5px;">
+      </div>
+
+
+      <!-- ====== -->
+      <div class="container">
+        
+        <div class="card">
+          <h4 style="background-color: white; margin: 15px;">LAPTOP BÁN CHẠY</h4>
+          <div class="row">
+            <div class="card-body">
+              <div class="crad col-md-12">
+
+                <!-- 1 -->
+                <div class="card-body" >
+                  <img src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2020/11/12/637407970062806725_mba-2020-gold-dd.png" alt="" width="100%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 5.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Macbook Air 13 2020 M1</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">21.990.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">26.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/balo (1).webp" alt="">
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img  src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/1/26/637787904727727554_asus-tuf-gaming-fx506lh-den-2022-dd.jpg" alt="" width="100%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 4.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Asus TUF Gaming </h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">16.690.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">20.699.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/balo (1).webp" alt="">
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img  src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/29/637947006257497678_hp-pavilion-15-eg-bac-2022-win11-dd.jpg" alt="" width="100%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 3.500.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Iphone 14 pro max 128GB</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">16.490.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">19.499.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/balo (1).webp" alt="">
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/2/637950740313797526_asus-tuf-gaming-fa506ihr-den-dd.jpg" alt="" width="100%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 4.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Asus Tuf Gaming </h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">18.990.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">21.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/balo (1).webp" alt="">
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- 5 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img  src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/8/7/637639339928194488_msi-gaming-gf63-den-dd.jpg" alt="" width="100%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 4.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>MSI Gaming GF63 Thin</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">29.990.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">33.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/balo (1).webp" alt="">
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+            <!-- 6 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img  src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/8/26/637971149907512230_lenovo-ideapad-gaming-3-15iah7-xam-dd.jpg" alt="" width="100%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 6.800.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Lenovo Gaming IdePad</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">20.490.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">27.299.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/balo (1).webp" alt="">
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img  src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/7/638007352801976726_msi-gaming-gf63-thin-11sc-1090vn-den-dd.jpg" alt="" width="100%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 2.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>MSI Gaming GF63 Thin 11SC</h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">16.990.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">18.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/balo (1).webp" alt="">
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="card-body">
+              <div class="crad col-md-12">
+                <div class="card-body" >
+                  <img  src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/9/638036059541782094_gigabyte-gaming-g5-ge-i5-12500h-rtx3050-dd-bh-moi.jpg" alt="" width="100%" height="180px">
+                  <div class="badge-container">
+                    <span class="badge-warning">Trả góp 0%</span>
+                    <span class="badge-primary">Lì xì 4.000.000đ</span>
+                  </div>
+                </div> 
+              </div>  
+              <card-title><h5>Gaming G5 i5 </h5> </card-title>
+              <div class="price-container">
+                <span class="price-primary">21.690.000 đ</span>
+                <div class="sale-price-container">
+                  <span class="price">23.999.000 đ</span>
+                  <span class="date">1 ngay 02:35:31</span>
+                </div>
+              </div>
+              <div>
+                <img src="./img/balo (1).webp" alt="">
+                <img src="./img/ic-tp-bank.webp" alt="">
+                <img src="./img/download.webp" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container">
+        <img width="100%" style="border-radius: 5px;" src="https://images.fpt.shop/unsafe/fit-in/1200x200/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/1/18/638096470799925981_F-H5_1200x200.png" alt="">
+      </div>
+
+
+      <!-- Tablet -->
+
+      <div class="container mt-3">
+        <div class="card">
+          <h4 style="background-color: white; margin: 15px;">LAPTOP BÁN CHẠY</h4>
+          <div class="row">
+          <!-- 1 -->
+          <div class="card-body">
+            <div class="crad col-md-12">
+              <div class="card-body" >
+                <img  src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/12/6/638059452014421919_ipad-gen-9-wifi-dd.jpg" alt="" width="100%" height="180px">
+                <div class="badge-container">
+                  <span class="badge-warning">Trả góp 0%</span>
+                  <span class="badge-primary">Lì xì 2.500.000đ</span>
+                </div>
+              </div> 
+            </div>  
+            <card-title><h5>Ipad gen 9 2021 </h5> </card-title>
+            <div class="price-container">
+              <span class="price-primary">7.490.000 đ</span>
+              <div class="sale-price-container">
+                <span class="price">9.999.000 đ</span>
+                <span class="date">1 ngay 02:35:31</span>
+              </div>
+            </div>
+            <div>
+            
+              <img src="./img/ic-tp-bank.webp" alt="">
+              <img src="./img/download.webp" alt="">
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="card-body">
+            <div class="crad col-md-12">
+              <div class="card-body" >
+                <img  src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/5/27/637577199955105403_ss-tab-a7-lite-bac-dd.jpg" alt="" width="100%" height="180px">
+                <div class="badge-container">
+                  <span class="badge-warning">Trả góp 0%</span>
+                  <span class="badge-primary">Lì xì 1.000.000đ</span>
+                </div>
+              </div> 
+            </div>  
+            <card-title><h5>Samsung Galaxy Tab A7 </h5> </card-title>
+            <div class="price-container">
+              <span class="price-primary">3.490.000 đ</span>
+              <div class="sale-price-container">
+                <span class="price">4.9499.000 đ</span>
+                <span class="date">1 ngay 02:35:31</span>
+              </div>
+            </div>
+            <div>
+              <img src="./img/bao da A7.webp" alt="">
+              <img src="./img/ic-tp-bank.webp" alt="">
+              <img src="./img/download.webp" alt="">
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="card-body">
+            <div class="crad col-md-12">
+              <div class="card-body" >
+                <img  src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/6/638006464334220327_lenovo-tab-m10-gen-2-dd-bh.jpg" alt="" width="100%" height="180px">
+                <div class="badge-container">
+                  <span class="badge-warning">Trả góp 0%</span>
+                  <span class="badge-primary">Lì xì 2.500.000đ</span>
+                </div>
+              </div> 
+            </div>  
+            <card-title><h5>lenovo Tab M10 64GB</h5> </card-title>
+            <div class="price-container">
+              <span class="price-primary">4.090.000 đ</span>
+              <div class="sale-price-container">
+                <span class="price">9.999.000 đ</span>
+                <span class="date">1 ngay 02:35:31</span>
+              </div>
+            </div>
+            <div>
+            
+              <img src="./img/ic-tp-bank.webp" alt="">
+              <img src="./img/download.webp" alt="">
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="card-body">
+            <div class="crad col-md-12">
+              <div class="card-body" >
+                <img  src="https://images.fpt.shop/unsafe/fit-in/214x214/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/9/22/637994581190835400_may-tinh-bang-masstel-tab-10-wifi-dd-docquyen.jpg  " alt="" width="100%" height="180px">
+                <div class="badge-container">
+                  <span class="badge-warning">Trả góp 0%</span>
+                  <span class="badge-primary">Lì xì 2.500.000đ</span>
+                </div>
+              </div> 
+            </div>  
+            <card-title><h5>Ipad gen 9 2021 </h5> </card-title>
+            <div class="price-container">
+              <span class="price-primary">7.490.000 đ</span>
+              <div class="sale-price-container">
+                <span class="price">9.999.000 đ</span>
+                <span class="date">1 ngay 02:35:31</span>
+              </div>
+            </div>
+            <div>
+            
+              <img src="./img/ic-tp-bank.webp" alt="">
+              <img src="./img/download.webp" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-3" style="background-color: #fff ; border-radius: 5px; width: 100%;">
+      <div id="myCarousel3" class="carousel slide" data-ride="carousel">
+        
+        <!-- Indicators -->
+        
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="product-container row" style="margin: 15px;">
+              <div class="col-sm">
+                <img width="100%"style="border-radius: 5px;" src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/18/638016979468850535_F_384x180 copy 5.jpg" alt="">
+              </div>
+              <div class="col-sm">
+                <img width="100%" style="border-radius: 5px;" src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/20/637939254988073687_F_384x180-6.png" alt="">
+              </div>
+              <div class="col-sm">
+                <img width="100%"style="border-radius: 5px;"src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/20/637939260761612196_F_384x180-4.png" alt="">
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="carousel-item">
+            <div class="product-container row" style="margin: 15px;">
+              <div class="col-sm">
+                <img width="100%" style="border-radius: 5px;" src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/20/637939254988073687_F_384x180-6.png" alt="">
+              </div>
+              <div class="col-sm">
+                <img width="100%"style="border-radius: 5px;"src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/20/637939260761612196_F_384x180-4.png" alt="">
+              </div>
+              <div class="col-sm">
+                <img width="100%"style="border-radius: 5px;" src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/30/638054473432676820_F_H3_384x180.png" alt="">
+              </div>
+              
+              
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="product-container row" style="margin: 15px;">
+              <div class="col-sm">
+                <img width="100%"style="border-radius: 5px;"src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/20/637939260761612196_F_384x180-4.png" alt="">
+              </div>
+              <div class="col-sm">
+                <img width="100%"style="border-radius: 5px;" src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/30/638054473432676820_F_H3_384x180.png" alt="">
+              </div>
+              <div class="col-sm">
+                <img width="100%"style="border-radius: 5px;"src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/20/637939254988073687_F_384x180-6.png" alt="">
+              </div>
+              
+            </div>
+          </div>
+
+
+          <div class="carousel-item">
+            <div class="product-container row" style="margin: 15px;">
+              <div class="col-sm">
+                <img width="100%"style="border-radius: 5px;" src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/11/30/638054473432676820_F_H3_384x180.png" alt="">
+              </div>
+              <div class="col-sm">
+                <img width="100%"style="border-radius: 5px;"src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/7/20/637939254988073687_F_384x180-6.png" alt="">
+              </div>
+              <div class="col-sm">
+                <img width="100%"style="border-radius: 5px;"src="https://images.fpt.shop/unsafe/fit-in/384x180/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/10/18/638016979468850535_F_384x180 copy 5.jpg" alt="">
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#myCarousel3" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel3" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container mt-3" style="background-color: white; border-radius:5px">
+      <h4 style="padding:15px;">DỊCH VỤ TIỆN ÍCH <br> </h4>
+      <div class="product-container row" style="margin: 0px; padding: 0;">
+       
+        <div class="col-sm" >
+          <div class="card" style="background-color: rgb(225, 249, 223);border-radius:7px; border: 1px solid rgb(139, 226, 139);">
+            <div class="card-body" >
+              <div class="card-title">
+                <strong style="font-size: 20px">Thanh toán tiền nước</strong> <br>
+                <p style="font-size: 18px; margin-bottom:0;">Thanh toán nhanh chóng tiện lợi</p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm" >
+          <div class="card" style="background-color: rgb(250, 233, 217);border-radius:7px; border: 1px solid rgb(227, 214, 198);" >
+            <div class="card-body" >
+              <div class="card-title">
+                <strong style="font-size: 20px;">Thanh toán tiền điện</strong> <br>
+                <p style="font-size: 18px; margin-bottom:0;">Thanh toán nhanh chóng tiện lợi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-sm" >
+          <div class="card" style="background-color: rgb(214, 242, 253);border-radius:7px; border: 1px solid rgb(171, 224, 231);">
+            <div class="card-body" >
+              <div class="card-title">
+                <strong style="font-size: 20px;">Thẻ cào điện thoại</strong> <br>
+                <p style="font-size: 18px; margin-bottom:0;"><span style="color: red">Giảm 2%</span> cho thẻ mệnh giá từ 100.000đ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm" >
+          <div class="card" style="background-color: rgb(249, 226, 226);border-radius:7px; border: 1px solid rgb(254, 209, 209);">
+            <div class="card-body" >
+              <div class="card-title">
+                <strong style="font-size: 20px;">Thẻ game</strong> <br>
+                <p style="font-size: 18px; margin-bottom:0;"><span style="color: red;">Giảm 2%</span>cho thẻ mệnh giá từ 100.000đ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      
+    </div>
+    
+    <div class="card-footer mt-3" style="width: 100%; height: 350px" >
+      <div class="col-sm-12 row">
+        <div class="col-sm" style="margin: 30px 0px 0px 70px;">
+          <a style="font-size: 18px" href="#" class="card-text">Giới thiệu về công ty</a> <br>
+          <a style="font-size: 18px" href="" class="card-text">Câu hỏi thường gặp mua hàng</a><br>
+          <a style="font-size: 18px" href="" class="card-text">Chính sách hoạt động</a><br>
+          <a style="font-size: 18px" href="" class="card-text">Quy chế hoạt động </a><br>
+          <a style="font-size: 18px" href="" class="card-text">Kiểm tra hóa đơn điện tử </a><br>
+          <a style="font-size: 18px" href="" class="card-text">Tra cứu thông tin bảo hành</a><br>
+        </div>
+
+        <div class="col-sm" style="margin: 30px 0px 0px 70px;">
+          <a style="font-size: 18px" href="#" class="card-text">Tin tuyển dụng</a> <br>
+          <a style="font-size: 18px" href="" class="card-text">Tin khuyến mãi</a><br>
+          <a style="font-size: 18px" href="" class="card-text">Hướng dẫn mua online</a><br>
+          <a style="font-size: 18px" href="" class="card-text">Hướng dẫn mua trả góp</a><br>
+          <a style="font-size: 18px" href="" class="card-text">Chính sách trả góp</a><br>
+        </div>
+
+        <div class="col-sm" style="margin: 30px 0px 0px 70px;">
+          <a style="font-size: 18px" href="#" class="card-text">Hệ thống cửa hàng</a> <br>
+          <a style="font-size: 18px" href="" class="card-text">Hệ thống bảo hành</a><br>
+          <a style="font-size: 18px" href="" class="card-text">Bán hàng doanh nghiệp</a><br>
+          <a style="font-size: 18px" href="" class="card-text">Giới thiệu máy đổi trả</a><br>
+          <a style="font-size: 18px" href="" class="card-text">Chính sách đổi trả</a><br>
+        </div>
+
+        <div class="col-sm" style="margin: 30px 0px 0px 70px;">
+          <span style="color: rgb(251, 233, 219)">Tư vấn mua hàng (Miễn phí)</span> <br>
+          <p style="color: rgb(251, 233, 219)"><strong style="font-weight: bold; color: rgb(72, 240, 67)">1800 6601</strong>( Nhánh 1 )</p> <br>
+          <span style="color: rgb(251, 233, 219)">Hỗ trợ kỹ thuật</span> <br>
+          <p style="color: rgb(251, 233, 219)"><strong style="font-weight: bold; color: rgb(72, 240, 67)">1800 6601</strong>( Nhánh 2 )</p> <br>
+        
+        </div>
+
+        <div class="col-sm" style="margin: 30px 0px 0px 70px;">
+          <span style="color: rgb(251, 233, 219)">Góp ý, khiếu nại dịch vụ <br> (8h00 - 22h00 )</span> <br>
+          <p style="color: rgb(251, 233, 219)"><strong style="font-weight: bold; color: rgb(72, 240, 67)">1800 6601</strong></p> <br>
+          
+        </div>
+      </div>
+      <div style="width: 100%;; background-color: rgb(192, 189, 189);text-align: center; padding: 5px;">
+        <small>@ 2007 -2022 Công ty cổ phần bán lẻ kỹ thuật số FPT /  261 - 263 Khánh Hội, P2, Q4, TP. Hồ Chí Minh / GPĐKKD số 0311609355 do Sở KHĐT TP.HCM cấp ngày 08/03/2012. GP số 47/GP-TTĐT do sở TTTT TP HCM cấp ngày 02/07/2018. Điện thoại: (028)73023456. Email: fptshop@fpt.com.vn. Chịu trách nhiệm nội dung: Nguyễn Trịnh Nhật Linh. </small>
+
+      </div>
+    </div>
+
+
+      
+  <script>
+    var app = angular.module("myapp", []);
+   app.controller("myctrl",function ($scope) {
+    
+    $scope.timKiem="";
+
+    $scope.handleSearch = function(){
+      window.location.href="./search.html?value=" + $scope.timKiem ; 
+      console.log($scope.timKiem);
+    }
+
+    });
+
+
+  </script>
+    
+    
+    <!-- ========== script =======  -->
+    <script
+      src="https://kit.fontawesome.com/a076
+      d05399.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+
+  </body>
+
+  
+</html>

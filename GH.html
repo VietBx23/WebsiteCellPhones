@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    
+  </head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Asm FPT shop</title>
+  </head>
+
+  <body ng-controller="myctrl" style="background-color: #fff;" >
+
+    <div class="navbar-container">
+      <!-- ======= header ========= -->
+      <header id="header-bar">
+        <div class="container d-flex align-items-center header_content">
+          <div class="logo_main" id="header-logo">
+            <img class="logo" width="100%" src="./img/FPT_Shop.webp" alt="" />
+          </div>
+        <!-- search -->
+        <div class="form_search-box col d-flex align-items-center">
+          <input ng-model="timKiem" type="text" class="form-control col-12" placeholder="Nhập tên điện thoại, máy tính, phụ kiện,.. cần tìm "/>
+          <button ng-click="handleSearch()" class="btn btn-dark"><i class="bi bi-search"></i></button>
+        </div>
+        <div class="nav nav-item" id="header-items">
+          <ul class="nav nav-pills nav-justified">
+            <li class="nav-item">
+              <i class="bi bi-file-earmark-bar-graph-fill"></i>
+              <a class="nav-link" href="#"><small> Thông tin hay</small> </a>
+            </li>
+            <li class="nav-item">
+              <i class="bi bi-credit-card-2-front-fill"></i>
+              <a class="nav-link" style="width: 150px" href="#"><small>Thanh toán & tiện ích</small></a>
+            </li>
+            <li class="nav-item">
+              <i class="bi bi-person-circle"></i>
+              <a class="nav-link" href="#"
+                ><small> Tài khoản của tôi</small>
+              </a>
+            </li>
+            <li class="nav-item">
+              <span class="badge">{{cartsCount}}</span>
+              <i class="bi bi-cart-fill"></i>
+              <a class="nav-link" href="#"><small> Giỏ hàng</small> </a>
+            </li>
+          </ul>
+        </div>
+      
+      </header>
+
+      <!-- ------ NAV ==== -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="navbar-lead">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="logo_main">
+            <img class="logo" src="./img/FPT_Shop.webp" alt="" />
+          </div>
+        </div>
+        
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"><small> TRANG CHỦ</small> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dienthoai.html"><small> ĐIỆN THOẠI</small> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small> LAP TOP</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" ><small> MÁY TÍNH BẢNG</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" ><small> APPLE</small> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small> PC-LINH KIỆN</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small> PHỤ KIỆN</small> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small> MÁY CŨ GIÁ RẺ</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small>HÀNG GIA DỤNG</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small>SIM THẺ</small></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><small>KHUYẾN MÃI</small></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Hình ảnh</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th> </th>
+            </tr>
+            <tr ng-repeat="c in carts track by $index">
+                <td>{{c.product.ten}}</td>
+                <td><img width="100px" src="{{c.product.anh}}" alt=""></td>
+                <td>{{c.product.gia}}</td>
+                <td><span ng-click="updateProductCount($index, -1)">-</span> {{c.count}} <span ng-click="updateProductCount($index, 1)">+</span></td>
+                <td>{{c.product.gia*c.count}}</td>
+                <td> <span ng-click="delProduct($index)">Xóa</span></td>
+            </tr>
+            <tr>
+                <td colspan="4">Tổng tiền:</td>
+                <td colspan="2">{{totalBill}} đ</td>
+            </tr>
+        </table>
+        <a href="dienthoai.html"><p>Mua các sản phẩm khác</p></a>
+    </div>
+
+    
+
+    <script>
+        var indexCart=0;
+        var app = angular.module('myapp', []);
+        app.controller('myctrl', function($scope) {
+
+          $scope.timKiem="";
+
+          $scope.handleSearch = function(){
+            window.location.href="./search.html?value=" + $scope.timKiem ; 
+            console.log($scope.timKiem);
+          }
+
+          //LOCALSTORAGE LÀ METHOD LƯU CÁC GIÁ TRỊ TRONG BIẾN KHÔNG BỊ MẤT KHI REFRESH LẠI TRÌNH DUYỆT
+          $scope.totalBill = 0;
+          $scope.carts = JSON.parse(localStorage.getItem("carts") || "[]"); //Lấy thông tin giỏ hàng trong localStorage
+          $scope.cartsCount = $scope.carts.length;
+
+          // Function + giỏ hàng + 1 => tổng tiền cộng dồn
+          $scope.updateProductCount = function(index, count) {
+            if(($scope.carts[index].count + count) < 0) return; //Không cho phép số lượng nhỏ hơn 0
+            $scope.carts[index].count += count; // cộng số lượng, + là tăng - là giảm
+
+            $scope.calculateBill();  // chạy lại hàm tính tổng đơn hàng
+            $scope.save();    // lưu vào  local
+          }
+
+          //xoá sản phẩm
+          $scope.delProduct=function(index){ 
+            $scope.cartsCount--;   // 
+            $scope.carts.splice(index,1);
+            $scope.calculateBill();
+            $scope.save();
+          }
+
+          //Lưu giỏ hàng vào localStorage
+          $scope.save = function() {
+            localStorage.setItem("carts", JSON.stringify($scope.carts)); //Chuyển đổi carts (obj) sang kiểu string và lưu vào localStorage
+          }
+
+          //tính tổng tiền đơn hàng
+          $scope.calculateBill = function() {
+              // curent :  gia hien tại , moi sp chay qa  sẽ la  bien curent  
+
+            let money = $scope.carts.reduce((total, current) => total + (current.count * current.product.gia), 0); // cộng giá hiện tại vào tổng đơn 
+                                                                                                              // 0 cuối cùng là để mặ định khi mới chạy
+            $scope.totalBill = money;
+          }
+          
+          $scope.calculateBill();
+        });
+      </script>
+    </body>
+
+    <div class="card-footer mt-3" style="width: 100%; height: 350px" >
+        <div class="col-sm-12 row">
+          <div class="col-sm" style="margin: 30px 0px 0px 70px;">
+            <a style="font-size: 18px" href="#" class="card-text">Giới thiệu về công ty</a> <br>
+            <a style="font-size: 18px" href="" class="card-text">Câu hỏi thường gặp mua hàng</a><br>
+            <a style="font-size: 18px" href="" class="card-text">Chính sách hoạt động</a><br>
+            <a style="font-size: 18px" href="" class="card-text">Quy chế hoạt động </a><br>
+            <a style="font-size: 18px" href="" class="card-text">Kiểm tra hóa đơn điện tử </a><br>
+            <a style="font-size: 18px" href="" class="card-text">Tra cứu thông tin bảo hành</a><br>
+          </div>
+  
+          <div class="col-sm" style="margin: 30px 0px 0px 70px;">
+            <a style="font-size: 18px" href="#" class="card-text">Tin tuyển dụng</a> <br>
+            <a style="font-size: 18px" href="" class="card-text">Tin khuyến mãi</a><br>
+            <a style="font-size: 18px" href="" class="card-text">Hướng dẫn mua online</a><br>
+            <a style="font-size: 18px" href="" class="card-text">Hướng dẫn mua trả góp</a><br>
+            <a style="font-size: 18px" href="" class="card-text">Chính sách trả góp</a><br>
+          </div>
+  
+          <div class="col-sm" style="margin: 30px 0px 0px 70px;">
+            <a style="font-size: 18px" href="#" class="card-text">Hệ thống cửa hàng</a> <br>
+            <a style="font-size: 18px" href="" class="card-text">Hệ thống bảo hành</a><br>
+            <a style="font-size: 18px" href="" class="card-text">Bán hàng doanh nghiệp</a><br>
+            <a style="font-size: 18px" href="" class="card-text">Giới thiệu máy đổi trả</a><br>
+            <a style="font-size: 18px" href="" class="card-text">Chính sách đổi trả</a><br>
+          </div>
+  
+          <div class="col-sm" style="margin: 30px 0px 0px 70px;">
+            <span style="color: rgb(251, 233, 219)">Tư vấn mua hàng (Miễn phí)</span> <br>
+            <p style="color: rgb(251, 233, 219)"><strong style="font-weight: bold; color: rgb(72, 240, 67)">1800 6601</strong>( Nhánh 1 )</p> <br>
+            <span style="color: rgb(251, 233, 219)">Hỗ trợ kỹ thuật</span> <br>
+            <p style="color: rgb(251, 233, 219)"><strong style="font-weight: bold; color: rgb(72, 240, 67)">1800 6601</strong>( Nhánh 2 )</p> <br>
+          
+          </div>
+  
+          <div class="col-sm" style="margin: 30px 0px 0px 70px;">
+            <span style="color: rgb(251, 233, 219)">Góp ý, khiếu nại dịch vụ <br> (8h00 - 22h00 )</span> <br>
+            <p style="color: rgb(251, 233, 219)"><strong style="font-weight: bold; color: rgb(72, 240, 67)">1800 6601</strong></p> <br>
+            
+          </div>
+        </div>
+        <div style="width: 100%;; background-color: rgb(192, 189, 189);text-align: center; padding: 5px;">
+          <small>@ 2007 -2022 Công ty cổ phần bán lẻ kỹ thuật số FPT /  261 - 263 Khánh Hội, P2, Q4, TP. Hồ Chí Minh / GPĐKKD số 0311609355 do Sở KHĐT TP.HCM cấp ngày 08/03/2012. GP số 47/GP-TTĐT do sở TTTT TP HCM cấp ngày 02/07/2018. Điện thoại: (028)73023456. Email: fptshop@fpt.com.vn. Chịu trách nhiệm nội dung: Nguyễn Trịnh Nhật Linh. </small>
+  
+        </div>
+</html>
